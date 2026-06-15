@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>鹰角法务周报</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="workspace-shell">
+      <section class="content-shell">
+        <header class="hero-section">
+          <div class="hero-copy">
+            <p class="eyebrow">Hypergryph Legal Weekly</p>
+            <h1>鹰角法务周报</h1>
+            <span id="viewTitle" class="sr-only">总览</span>
+          </div>
+
+          <div class="header-meta" aria-label="周报筛选">
+            <div class="week-picker" id="weekPicker">
+              <button
+                class="week-trigger"
+                id="weekButton"
+                type="button"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-label="选择周报周次"
+              >
+                <span class="week-trigger-icon" aria-hidden="true"></span>
+                <span class="week-trigger-label" id="weekButtonLabel"></span>
+                <span class="week-trigger-chevron" aria-hidden="true"></span>
+              </button>
+              <div class="week-menu" id="weekMenu" role="listbox" aria-label="选择周报周次"></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="page-layout">
+          <aside class="module-nav-shell">
+            <div class="nav-brand" aria-label="法务周报品牌">
+              <span class="nav-brand-mark" aria-hidden="true">
+                <img src="./assets/hypergryph-mark.jpg" alt="" />
+              </span>
+            </div>
+            <nav class="module-nav" id="moduleNav" aria-label="法务周报模块导航"></nav>
+          </aside>
+
+          <div class="page-main">
+            <section class="overview-view view active" id="overviewView" aria-labelledby="overviewHeading">
+              <section class="overview-grid">
+                <article class="data-panel highlight-panel">
+                  <div class="panel-title compact">
+                    <div>
+                      <h2 id="overviewHeading" class="panel-heading heading-highlight">本周亮点成果概览</h2>
+                    </div>
+                  </div>
+                  <div class="highlight-grid" id="highlightGrid"></div>
+                </article>
+
+                <article class="data-panel risk-panel">
+                  <div class="panel-title compact">
+                    <h2 class="panel-heading heading-risk">重要风险提示</h2>
+                  </div>
+                  <div class="risk-grid" id="riskGrid"></div>
+                </article>
+
+                <article class="data-panel ops-panel">
+                  <div class="panel-title compact">
+                    <h2 class="panel-heading heading-ops">运营数据</h2>
+                  </div>
+                  <div class="ops-grid" id="opsGrid"></div>
+                </article>
+              </section>
+            </section>
+
+            <section class="module-view view" id="moduleView" aria-live="polite">
+              <section class="module-grid-detail">
+                <article class="data-panel module-head">
+                  <div class="panel-title">
+                    <div>
+                      <h2 id="moduleTitle" class="panel-heading">模块详情</h2>
+                    </div>
+                  </div>
+                  <p id="moduleDescription" class="module-description"></p>
+                </article>
+
+                <article class="data-panel detail-main">
+                  <div class="panel-title compact">
+                    <h2 class="panel-heading">本周事项</h2>
+                  </div>
+                  <div class="item-table" id="itemTable"></div>
+                </article>
+              </section>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="ops-new-modal" id="opsNewModal" hidden>
+      <div class="ops-new-backdrop" data-ops-new-close></div>
+      <section class="ops-new-card" role="dialog" aria-modal="true" aria-labelledby="opsNewTitle">
+        <div class="ops-new-head">
+          <div>
+            <span class="ops-new-meta" id="opsNewMeta"></span>
+            <h3 id="opsNewTitle">新增数据</h3>
+          </div>
+          <button class="ops-new-close-button" type="button" data-ops-new-close aria-label="关闭新增数据">×</button>
+        </div>
+        <div class="ops-new-list" id="opsNewList"></div>
+      </section>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
